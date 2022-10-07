@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React from 'react';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import { Box } from '@mui/material';
+
+import aacLogo from './assets/aac-logo.png';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="homepage-image">
+        <img alt="Arsenal Logo Homepage" />
+      </div>
+      <div className="homepage-content">
+        <div style={{ width: '25%', margin: '4rem auto' }}>
+          <img style={{ width: '100%' }} src={aacLogo} alt="AAC Logo" />
+        </div>
+        <p>We are going live soon!</p>
+        <div className="socials">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '40%',
+              margin: '1rem auto',
+            }}
+          >
+            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+              <TwitterIcon sx={{ color: '#303E56' }} />
+            </a>
+            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+              <FacebookIcon sx={{ color: '#303E56' }} />
+            </a>
+            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+              <InstagramIcon sx={{ color: '#303E56' }} />
+            </a>
+            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+              <YouTubeIcon sx={{ color: '#303E56' }} />
+            </a>
+          </Box>
+        </div>
+      </div>
+    </>
   );
 }
 
