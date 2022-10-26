@@ -30,18 +30,19 @@ export const renderApp = (req, res) => {
       <meta charset="utf-8" />
       <title>AAC | Arsenal Africa Convention 2023</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link
-        rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       />
       <link
-        rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
       ${cssLinksFromAssets(assets, 'client')}
   </head>
-  <body>
+  <body style="margin: 0px; padding: 0px;">
       <div id="root">${markup}</div>
       ${jsScriptTagsFromAssets(assets, 'client', 'defer', 'crossorigin')}
   </body>
