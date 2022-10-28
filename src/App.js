@@ -28,13 +28,13 @@ function App() {
               margin: '1rem auto',
             }}
           >
-            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/aa_convention" target="blank" rel="noopener noreferrer">
               <TwitterIcon sx={{ color: '#303E56' }} />
             </a>
-            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/profile.php?id=100084316916984" target="blank" rel="noopener noreferrer">
               <FacebookIcon sx={{ color: '#303E56' }} />
             </a>
-            <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/aa_convention" target="blank" rel="noopener noreferrer">
               <InstagramIcon sx={{ color: '#303E56' }} />
             </a>
             <a href="https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig" target="blank" rel="noopener noreferrer">
