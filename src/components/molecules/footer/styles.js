@@ -30,6 +30,9 @@ export const logoStyles = {
 };
 
 export const iconStyles = {
+  '&:hover': {
+    cursor: 'pointer',
+  },
   '@media (min-width: 744px)': {
     width: '30px',
     height: '30px',

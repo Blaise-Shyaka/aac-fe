@@ -22,16 +22,16 @@ function Footer() {
       </Box>
       <Box sx={socialMediaContainer}>
         <Box>
-          <FacebookRoundedIcon sx={iconStyles} />
+          <FacebookRoundedIcon sx={iconStyles} onClick={() => window.open('https://web.facebook.com/profile.php?id=100084316916984', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <InstagramIcon sx={iconStyles} />
+          <InstagramIcon sx={iconStyles} onClick={() => window.open('https://instagram.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <TwitterIcon sx={iconStyles} />
+          <TwitterIcon sx={iconStyles} onClick={() => window.open('https://twitter.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <YouTubeIcon sx={iconStyles} />
+          <YouTubeIcon sx={iconStyles} onClick={() => window.open('https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig', '_blank', 'noopener', 'noreferrer')} />
         </Box>
       </Box>
     </Box>

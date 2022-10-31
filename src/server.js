@@ -24,11 +24,13 @@ export const renderApp = (req, res) => {
     </StaticRouter>,
   );
   const html = `<!doctype html>
-  <html lang="">
+  <html lang="en">
   <head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta charset="utf-8" />
       <title>AAC | Arsenal Africa Convention 2023</title>
+      <meta name="description" content="Arsenal Africa Convention">
+      <meta name="description" content="Arsenal Africa Convention is the biggest football gathering in Africa">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

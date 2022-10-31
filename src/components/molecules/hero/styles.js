@@ -1,6 +1,6 @@
-import TornPaper from '../../../assets/torn-paper-white-mobile.png';
-import TornPaperTablet from '../../../assets/torn-paper-white.png';
-import TornPaperDesktop from '../../../assets/torn-paper-black-desktop-cropped.png';
+import TornPaper from '../../../assets/torn-paper-white-mobile.avif';
+import TornPaperTablet from '../../../assets/torn-paper-white.avif';
+import TornPaperDesktop from '../../../assets/torn-paper-black-desktop-cropped.avif';
 
 export const heroStyles = {
   backgroundColor: '#000',

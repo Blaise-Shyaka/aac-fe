@@ -1,4 +1,4 @@
-import themeBgMobile from '../../../assets/theme-bg-mobile.png';
+import themeBgMobile from '../../../assets/theme-bg-mobile.avif';
 
 export const themeContainer = {
   width: '100%',

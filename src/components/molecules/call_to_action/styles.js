@@ -1,5 +1,5 @@
-import gunnersaurus from '../../../assets/gunnersaurus-mobile-red.png';
-import gunnersaurusDesktop from '../../../assets/gunnersaurus-desktop-red.png';
+import gunnersaurus from '../../../assets/gunnersaurus-mobile-red.avif';
+import gunnersaurusDesktop from '../../../assets/gunnersaurus-desktop-red.avif';
 
 export const ctaStyles = {
   backgroundImage: `url(${gunnersaurus})`,

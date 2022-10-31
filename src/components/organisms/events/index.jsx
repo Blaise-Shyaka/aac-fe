@@ -1,12 +1,11 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import EventCard from '../../molecules/event_card';
-import conferenceImg from '../../../assets/conference.png';
-import beyonceImg from '../../../assets/beyonce.png';
-import amahoroStadiumImg from '../../../assets/amahoro-stadium.png';
-import ycImg from '../../../assets/yc.png';
+import conferenceImg from '../../../assets/conference.avif';
+import concertImg from '../../../assets/bk-concert.avif';
+import amahoroStadiumImg from '../../../assets/amahoro-stadium.avif';
+import ycImg from '../../../assets/yc.avif';
 import eventTitleStyles from './styles';
-import RoundedButton, { FILL_COLORS } from '../../molecules/rounded_button';
 
 // This has to be fetched from the API Later. This is solely for demo purposes
 // Image, title, and alt text should all be fetched from the API
@@ -23,7 +22,7 @@ const listOfEvents = [
   },
   {
     title: 'AAC Summer Ball',
-    image: beyonceImg,
+    image: concertImg,
     altText: 'AAC Summer Ball poster',
   },
   {
@@ -55,7 +54,7 @@ function Events() {
         {markup}
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <RoundedButton
+        {/* <RoundedButton
           fill={FILL_COLORS.primary}
           style={{
             width: '15rem',
@@ -66,7 +65,7 @@ function Events() {
           }}
         >
           See all events
-        </RoundedButton>
+        </RoundedButton> */}
       </Box>
     </Box>
   );
