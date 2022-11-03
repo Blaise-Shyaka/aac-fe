@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cabin+Sketch:wght@400;700&family=Rubik+Dirt&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-image {
+  display: none;
+}
+
+.homepage-content {
+  background: url(./assets/Arsenal.png) no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.homepage-content p {
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 2.5rem;
+  font-style: italic;
+  text-align: center;
+  color: #303E56;
+}
+
+@media screen and (min-width: 1024px) {
+  .homepage-image {
+    display: block;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    /* border: 2px solid red; */
+    background: url(./assets/960Arsenal.png) no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* border: 6px solid red; */
+  }
+  
+  .homepage-image img {
+    position: absolute;
+    left: -100%;
+    top: -30%;
+  }
+  
+  .homepage-content {
+    width: 50%;
+    position: fixed;
+    background: none;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    /* border: 2px solid blue; */
+  }
+  
+  .homepage-content p {
+    font-family: 'Rubik Dirt', cursive;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+    color: #303E56;
+  }
+}
