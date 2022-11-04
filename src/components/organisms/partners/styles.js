@@ -16,9 +16,10 @@ export const titleStyles = {
   textTransform: 'uppercase',
   textAlign: 'center',
   fontWeight: '700',
-  fontSize: '1.5rem',
+  fontSize: '3rem',
   lineHeight: '4rem',
   marginTop: '4rem',
+  fontFamily: 'Gotham Condensed, Montserrat, sans-serif',
   '@media (min-width: 744px)': {
     fontSize: '3rem',
     lineHeight: '6rem',

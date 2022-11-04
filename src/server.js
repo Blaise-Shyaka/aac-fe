@@ -41,6 +41,7 @@ export const renderApp = (req, res) => {
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
 
       ${cssLinksFromAssets(assets, 'client')}
   </head>
