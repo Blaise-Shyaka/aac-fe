@@ -8,8 +8,9 @@ const textStyles = {
   maxWidth: '80%',
   textTransform: 'uppercase',
   fontWeight: '700',
-  fontSize: '1rem',
+  fontSize: '1.3rem',
   textAlign: 'center',
+  fontFamily: 'Gotham Condensed, Montserrat, sans-serif',
 };
 
 export default textStyles;

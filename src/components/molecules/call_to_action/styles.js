@@ -23,9 +23,10 @@ export const ctaStyles = {
 export const ctaText = {
   color: '#F1F2F0',
   fontSize: '2rem',
-  fontFamily: 'Montserrat',
+  fontFamily: 'Gotham, Montserrat, sans-serif',
   width: '22rem',
   marginLeft: '1rem',
+  fontWeight: '300',
   '@media (min-width: 744px)': {
     width: '25rem',
     fontSize: '2.5rem',

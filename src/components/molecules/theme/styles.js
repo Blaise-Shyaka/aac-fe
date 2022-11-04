@@ -27,22 +27,23 @@ export const themeTextContainer = {
 
 export const themeTitle = {
   color: '#EB412A',
-  fontFamily: 'Montserrat',
+  fontFamily: 'Gotham Condensed, Montserrat, sans-serif',
   fontWeight: 'bold',
-  fontSize: '2rem',
+  fontSize: '3rem',
   lineHeight: '55px',
   textAlign: 'justify',
   margin: '0.5rem auto',
   padding: '0.5rem',
   width: '85%',
   '@media (min-width: 744px)': {
-    fontSize: '3rem',
+    fontSize: '4.5rem',
     lineHeight: '70px',
   },
 };
 
 export const themeSubtitle = {
-  fontFamily: 'Montserrat',
+  fontFamily: 'Gotham, Montserrat, sans-serif',
+  fontWeight: '300',
   fontSize: '1.2rem',
   margin: '0.8rem',
   padding: '0.8rem',

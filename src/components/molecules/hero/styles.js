@@ -29,17 +29,18 @@ export const heroImageStyles = {
 
 export const heroTextStyles = {
   color: '#fff',
-  fontFamily: 'Montserrat',
+  fontFamily: 'Gotham Cond, Montserrat, sans-serif',
   fontWeight: 300,
-  width: '90%',
+  width: '65%',
   margin: '0 auto',
-  fontSize: '2.5rem',
+  fontSize: '2.8rem',
+  letterSpacing: '0.04em',
   textAlign: 'center',
   '@media (min-width: 744px)': {
     fontSize: '4.8rem',
   },
   '@media (min-width: 1024px)': {
-    fontSize: '2.8rem',
+    fontSize: '4.5rem',
     width: '60%',
   },
 };
