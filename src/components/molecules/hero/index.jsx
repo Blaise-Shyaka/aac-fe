@@ -9,6 +9,7 @@ import {
   heroText,
   playersStyles,
   playersWrapper,
+  comingSoonImage,
 } from './styles';
 import ArsenalPlayers from '../../../assets/arsenal-players.avif';
 import registrationOpenSoon from '../../../assets/registration-open-soon.avif';
@@ -61,11 +62,11 @@ function Hero() {
         <Box sx={desktopHeroTextWrapper}>
           <Box sx={heroText}>
             <Typography sx={heroTextStyles}>ARSENAL AFRICA CONVENTION 2023 - KIGALI</Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box sx={comingSoonImage}>
               <Box
                 component="img"
                 src={registrationOpenSoon}
-                sx={{ width: '65%', marginTop: '1rem' }}
+                sx={{ width: '65%', marginTop: '1rem', marginLeft: '1rem' }}
                 alt="Registration open soon"
               />
             </Box>
