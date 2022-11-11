@@ -9,8 +9,17 @@ export const FILL_COLORS = {
   secondary: '#000',
 };
 
-function RoundedButton({ children, fill, style }) {
-  return <Button sx={{ ...roundBtnStyle, backgroundColor: fill, ...style }}>{children}</Button>;
+function RoundedButton({
+  children, fill, style, clickHandler,
+}) {
+  return (
+    <Button
+      onClick={clickHandler}
+      sx={{ ...roundBtnStyle, backgroundColor: fill, ...style }}
+    >
+      {children}
+    </Button>
+  );
 }
 
 export default RoundedButton;
@@ -19,8 +28,10 @@ RoundedButton.propTypes = {
   fill: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   style: PropTypes.shape({}),
+  clickHandler: PropTypes.func,
 };
 
 RoundedButton.defaultProps = {
   style: {},
+  clickHandler: () => {},
 };

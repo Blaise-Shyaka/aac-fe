@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Box } from '@mui/material';
 import HomePage from './components/pages/delegate';
+import Events from './components/pages/delegate/events';
+import Register from './components/pages/delegate/register';
 import './App.css';
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <Box sx={{ maxWidth: '1440px', margin: '0 auto' }}>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/events" component={Events} />
+        <Route exact path="/register" component={Register} />
       </Switch>
     </Box>
   );
