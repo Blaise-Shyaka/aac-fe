@@ -6,7 +6,6 @@ import RoundedButton, { FILL_COLORS } from '../rounded_button';
 
 function CallToAction() {
   const history = useHistory();
-
   return (
     <Box sx={ctaStyles}>
       <Typography sx={ctaText}>Be part of the biggest African football gathering</Typography>
