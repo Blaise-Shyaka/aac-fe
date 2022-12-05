@@ -22,8 +22,16 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import textFieldContainers from '../convention_registration/styles';
 import { containedBtnStyles } from '../../organisms/multi_step_form/multi_step_form_control/styles';
+import MultiStepFormControl from '../../organisms/multi_step_form/multi_step_form_control';
 
-function YouthFootballCampRegistration({ registrationDetails, setRegistrationDetails }) {
+function YouthFootballCampRegistration(
+  {
+    registrationDetails,
+    setRegistrationDetails,
+    previousStep,
+    nextStep,
+  },
+) {
   const [campRegistration, setCampRegistration] = useState({ fullName: '', birthDate: null });
 
   const handleAddingChild = () => {
@@ -118,6 +126,12 @@ function YouthFootballCampRegistration({ registrationDetails, setRegistrationDet
               )
           }
         </Box>
+        <MultiStepFormControl
+          skippable
+          handleSkip={nextStep}
+          previousBtnHandler={previousStep}
+          nextBtnHandler={nextStep}
+        />
       </Box>
     </LocalizationProvider>
   );
@@ -129,4 +143,6 @@ YouthFootballCampRegistration.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   registrationDetails: PropTypes.object.isRequired,
   setRegistrationDetails: PropTypes.func.isRequired,
+  previousStep: PropTypes.func.isRequired,
+  nextStep: PropTypes.func.isRequired,
 };

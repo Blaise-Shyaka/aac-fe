@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography } from '@mui/material';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import ProgressBar from './progress_bar';
-import MultiStepFormControl from './multi_step_form_control';
 
-function MultiStepForm({ steps, nextBtnDisabled }) {
-  const [currentStep, setCurrentStep] = useState(0);
-  const [completedSteps, setCompletedSteps] = useState([]);
-
+function MultiStepForm({ steps, completedSteps, currentStep }) {
   return (
     <Box>
       <ProgressBar steps={steps} completedSteps={completedSteps} currentStep={currentStep} />
@@ -25,17 +21,6 @@ function MultiStepForm({ steps, nextBtnDisabled }) {
         {steps[currentStep].name}
       </Typography>
       { steps[currentStep].component }
-      <MultiStepFormControl
-        numberOfSteps={steps.length}
-        currentStep={currentStep}
-        setStep={setCurrentStep}
-        completedSteps={completedSteps}
-        setCompletedSteps={setCompletedSteps}
-        skippable={steps[currentStep].skippable}
-        nextBtnDisabled={nextBtnDisabled}
-        nextBtnHandler={steps[currentStep].nextBtnHandler}
-        handleSubmit={steps[currentStep].handleSubmit}
-      />
     </Box>
   );
 }
@@ -53,9 +38,6 @@ MultiStepForm.propTypes = {
         handleSubmit: PropTypes.func,
       }))
     .isRequired,
-  nextBtnDisabled: PropTypes.bool,
-};
-
-MultiStepForm.defaultProps = {
-  nextBtnDisabled: false,
+  completedSteps: PropTypes.number.isRequired,
+  currentStep: PropTypes.number.isRequired,
 };
