@@ -1,11 +1,13 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 import EventCard from '../../molecules/event_card';
 import conferenceImg from '../../../assets/conference.avif';
 import concertImg from '../../../assets/bk-concert.avif';
 import amahoroStadiumImg from '../../../assets/amahoro-stadium.avif';
 import ycImg from '../../../assets/yc.avif';
 import eventTitleStyles from './styles';
+import RoundedButton, { FILL_COLORS } from '../../molecules/rounded_button';
 
 // This has to be fetched from the API Later. This is solely for demo purposes
 // Image, title, and alt text should all be fetched from the API
@@ -33,6 +35,8 @@ const listOfEvents = [
 ];
 
 function Events() {
+  const history = useHistory();
+
   const markup = listOfEvents.map((event) => (
     <EventCard
       key={event.title}
@@ -54,7 +58,7 @@ function Events() {
         {markup}
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        {/* <RoundedButton
+        <RoundedButton
           fill={FILL_COLORS.primary}
           style={{
             width: '15rem',
@@ -63,9 +67,10 @@ function Events() {
             lineHeight: '1rem',
             marginBottom: '2rem',
           }}
+          clickHandler={() => history.push('/events')}
         >
           See all events
-        </RoundedButton> */}
+        </RoundedButton>
       </Box>
     </Box>
   );

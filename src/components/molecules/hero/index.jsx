@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 import {
   desktopHeroStyle,
   desktopHeroTextWrapper,
@@ -11,29 +12,32 @@ import {
   playersWrapper,
 } from './styles';
 import ArsenalPlayers from '../../../assets/arsenal-players.avif';
-import registrationOpenSoon from '../../../assets/registration-open-soon.avif';
+import RoundedButton from '../rounded_button';
 
-// const registerBtnStyle = {
-//   backgroundColor: '#EB412A',
-//   borderRadius: '60px',
-//   width: '134px',
-//   height: '52px',
-//   marginTop: '1rem',
-//   color: '#fff',
-//   fontFamily: 'Montserrat',
-//   '@media (min-width: 744px)': {
-//     width: '232px',
-//     height: '64px',
-//     fontSize: '24px',
-//     padding: '2.5rem 3rem',
-//   },
-//   '@media (min-width: 1024px)': {
-//     fontSize: '16px',
-//     padding: '1rem 2rem',
-//   },
-// };
+export const registerBtnStyle = {
+  backgroundColor: '#EB412A',
+  borderRadius: '60px',
+  width: '134px',
+  height: '52px',
+  marginTop: '1rem',
+  color: '#fff',
+  fontFamily: 'Montserrat',
+  '@media (min-width: 744px)': {
+    width: '232px',
+    height: '64px',
+    fontSize: '24px',
+    padding: '2.5rem 3rem',
+  },
+  '@media (min-width: 1024px)': {
+    fontSize: '16px',
+    padding: '1rem 2rem',
+    marginLeft: '2rem',
+  },
+};
 
 function Hero() {
+  const history = useHistory();
+
   return (
     <>
       <Box sx={heroStyles}>
@@ -48,12 +52,7 @@ function Hero() {
         <Box>
           <Typography sx={heroTextStyles}>ARSENAL AFRICA CONVENTION 2023 - KIGALI</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box
-              component="img"
-              src={registrationOpenSoon}
-              sx={{ width: '65%', marginTop: '1rem' }}
-              alt="Registration open soon"
-            />
+            <RoundedButton clickHandler={() => history.push('/register')} fill="#EB412A" style={registerBtnStyle}>Register</RoundedButton>
           </Box>
         </Box>
       </Box>
@@ -61,13 +60,8 @@ function Hero() {
         <Box sx={desktopHeroTextWrapper}>
           <Box sx={heroText}>
             <Typography sx={heroTextStyles}>ARSENAL AFRICA CONVENTION 2023 - KIGALI</Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Box
-                component="img"
-                src={registrationOpenSoon}
-                sx={{ width: '65%', marginTop: '1rem' }}
-                alt="Registration open soon"
-              />
+            <Box>
+              <RoundedButton clickHandler={() => history.push('/register')} fill="#EB412A" style={registerBtnStyle}>Register</RoundedButton>
             </Box>
           </Box>
         </Box>

@@ -21,7 +21,7 @@ function Theme() {
             sx={themeSubtitle}
           >
             The Arsenal Africa Convention (AAC) 2023 is a
-            series of inter-related soccer-themed events over a
+            series of inter-related football-themed events over a
             6-day duration to be staged in Kigali city, Rwanda.
           </Typography>
         </Box>

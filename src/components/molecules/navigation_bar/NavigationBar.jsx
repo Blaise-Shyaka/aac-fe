@@ -1,35 +1,42 @@
 import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import Logo from '../../../assets/aac-dark-gray.svg';
 import AACWhiteLogo from '../../../assets/aac-white-logo.svg';
 import MobileMenu from '../../../assets/carbon_overflow-menu-horizontal.svg';
 import {
-  desktopNavbar, desktopMenu, navBarStyles, logoStyles, mobileMenuIcon,
+  desktopNavbar, desktopMenu, navBarStyles, logoStyles, mobileMenuIcon, menuLinks,
 } from './styles';
+import { DARK_COLORS } from '../../../constants';
 
-function NavigationBar() {
+function NavigationBar({ defaultBackgroundColor, defaultMobileBackgroundColor }) {
   const [backgroundColor, setBackgroundColor] = useState('none');
-  // const [menuLinksColor, setMenuLinksColor] = useState('#000');
+  const [menuLinksColor, setMenuLinksColor] = useState(DARK_COLORS.includes(defaultBackgroundColor || backgroundColor) ? '#fff' : '#000');
+  const HOMEPAGE_PATH = '/';
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const HERO_SECTION_BOTTOM_SCROLL_POSITION = 600;
-      if (window.scrollY >= HERO_SECTION_BOTTOM_SCROLL_POSITION) {
-        setBackgroundColor('#000');
-        // setMenuLinksColor('#fff');
-      } else {
-        setBackgroundColor('none');
-        // setMenuLinksColor('#000');
-      }
-    });
+    if (window.location.pathname === HOMEPAGE_PATH) {
+      window.addEventListener('scroll', () => {
+        const HERO_SECTION_BOTTOM_SCROLL_POSITION = 600;
+        if (window.scrollY >= HERO_SECTION_BOTTOM_SCROLL_POSITION) {
+          setBackgroundColor('#000');
+          setMenuLinksColor('#fff');
+        } else {
+          setBackgroundColor('none');
+          setMenuLinksColor('#000');
+        }
+      });
+    }
   });
 
   return (
     <>
-      <Box sx={navBarStyles}>
+      <Box sx={{ ...navBarStyles, backgroundColor: defaultMobileBackgroundColor }}>
         <Box
           component="img"
-          src={Logo}
+          src={DARK_COLORS.includes(defaultMobileBackgroundColor) ? AACWhiteLogo : Logo}
           alt="AAC Logo"
           sx={logoStyles}
         />
@@ -42,7 +49,12 @@ function NavigationBar() {
           />
         </Box>
       </Box>
-      <Box sx={{ ...desktopNavbar, backgroundColor }}>
+      <Box
+        sx={{
+          ...desktopNavbar,
+          backgroundColor: defaultBackgroundColor || backgroundColor,
+        }}
+      >
         <Box
           component="img"
           src={AACWhiteLogo}
@@ -50,9 +62,12 @@ function NavigationBar() {
           sx={logoStyles}
         />
         <Box sx={desktopMenu}>
-          {/* <Typography sx={{ ...menuLinks, color: menuLinksColor }}>HOME</Typography>
-          <Typography sx={{ ...menuLinks, color: menuLinksColor }}>ABOUT</Typography>
-          <Typography sx={{ ...menuLinks, color: menuLinksColor }}>EVENTS</Typography> */}
+          <Link to="/">
+            <Typography sx={{ ...menuLinks, color: menuLinksColor, textDecoration: 'none' }}>HOME</Typography>
+          </Link>
+          <Link to="/events">
+            <Typography sx={{ ...menuLinks, color: menuLinksColor, textDecoration: 'none' }}>EVENTS</Typography>
+          </Link>
         </Box>
       </Box>
     </>
@@ -60,3 +75,13 @@ function NavigationBar() {
 }
 
 export default NavigationBar;
+
+NavigationBar.propTypes = {
+  defaultBackgroundColor: PropTypes.string,
+  defaultMobileBackgroundColor: PropTypes.string,
+};
+
+NavigationBar.defaultProps = {
+  defaultBackgroundColor: '',
+  defaultMobileBackgroundColor: '#fff',
+};

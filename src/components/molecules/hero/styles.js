@@ -42,6 +42,9 @@ export const heroTextStyles = {
   '@media (min-width: 1024px)': {
     fontSize: '4.5rem',
     width: '60%',
+    textAlign: 'left',
+    marginLeft: '2rem',
+    marginTop: '1rem',
   },
 };
 
@@ -95,5 +98,14 @@ export const heroText = {
   },
   '@media (min-width: 1300px)': {
     paddingRight: '30%',
+  },
+};
+
+export const comingSoonImage = {
+  display: 'flex',
+  justifyContent: 'center',
+  '@media (min-width: 1024px)': {
+    display: 'block',
+    // paddingLeft: '1rem',
   },
 };

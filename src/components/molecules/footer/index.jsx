@@ -1,4 +1,6 @@
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -8,30 +10,34 @@ import Logo from '../../../assets/aac-dark-gray.svg';
 import {
   footerContainer, logoContainer, logoStyles, socialMediaContainer, iconStyles,
 } from './styles';
+import AACWhiteLogo from '../../../assets/aac-white-logo.svg';
+import { DARK_COLORS } from '../../../constants';
 
-function Footer() {
+function Footer({ backgroundColor }) {
+  const backgroundIsDark = DARK_COLORS.includes(backgroundColor);
+
   return (
-    <Box sx={footerContainer}>
+    <Box sx={{ ...footerContainer, backgroundColor }}>
       <Box sx={logoContainer}>
         <Box
           component="img"
-          src={Logo}
+          src={backgroundIsDark ? AACWhiteLogo : Logo}
           alt="AAC Logo"
           sx={logoStyles}
         />
       </Box>
       <Box sx={socialMediaContainer}>
         <Box>
-          <FacebookRoundedIcon sx={iconStyles} onClick={() => window.open('https://web.facebook.com/profile.php?id=100084316916984', '_blank', 'noopener', 'noreferrer')} />
+          <FacebookRoundedIcon sx={{ ...iconStyles, color: backgroundIsDark ? '#fff' : '#000' }} onClick={() => window.open('https://web.facebook.com/profile.php?id=100084316916984', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <InstagramIcon sx={iconStyles} onClick={() => window.open('https://instagram.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
+          <InstagramIcon sx={{ ...iconStyles, color: backgroundIsDark ? '#fff' : '#000' }} onClick={() => window.open('https://instagram.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <TwitterIcon sx={iconStyles} onClick={() => window.open('https://twitter.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
+          <TwitterIcon sx={{ ...iconStyles, color: backgroundIsDark ? '#fff' : '#000' }} onClick={() => window.open('https://twitter.com/aa_convention', '_blank', 'noopener', 'noreferrer')} />
         </Box>
         <Box>
-          <YouTubeIcon sx={iconStyles} onClick={() => window.open('https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig', '_blank', 'noopener', 'noreferrer')} />
+          <YouTubeIcon sx={{ ...iconStyles, color: backgroundIsDark ? '#fff' : '#000' }} onClick={() => window.open('https://www.youtube.com/channel/UCafMm8xFPkehGVC4sYjAFig', '_blank', 'noopener', 'noreferrer')} />
         </Box>
       </Box>
     </Box>
@@ -39,3 +45,11 @@ function Footer() {
 }
 
 export default Footer;
+
+Footer.propTypes = {
+  backgroundColor: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  backgroundColor: 'none',
+};

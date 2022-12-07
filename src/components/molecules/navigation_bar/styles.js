@@ -45,6 +45,7 @@ export const desktopNavbar = {
   '@media (min-width: 1024px)': {
     display: 'flex',
     position: 'fixed',
+    top: '0',
     width: '100%',
     justifyContent: 'space-between',
     zIndex: '5',
