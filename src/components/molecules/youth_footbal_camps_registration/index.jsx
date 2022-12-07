@@ -94,7 +94,7 @@ function YouthFootballCampRegistration(
             !registrationDetails.footballCamps.length
               ? (
                 <Alert severity="warning">
-                  <AlertTitle>Warning</AlertTitle>
+                  <AlertTitle>Caution</AlertTitle>
                   You have not yet registered any child for the Youth Football Camps
                 </Alert>
               )

@@ -16,7 +16,7 @@ const validationSchema = yup.object({
   firstName: yup
     .string('Enter your First name')
     .min(3, 'First name is too short')
-    .required('Firstname is required'),
+    .required('First name is required'),
   lastName: yup
     .string('Enter your Last name')
     .min(3, 'Last name is too short')
@@ -57,9 +57,9 @@ function ConventionRegistration({
       firstName: registrationDetails.delegate.firstName || '',
       lastName: registrationDetails.delegate.lastName || '',
       email: registrationDetails.delegate.email || '',
-      country: registrationDetails.delegate.country || null,
+      country: registrationDetails.delegate.country || '',
       phoneNumber: registrationDetails.delegate.phoneNumber || DEFAULT_CALLING_CODE,
-      birthDate: registrationDetails.delegate.birthDate || null,
+      birthDate: registrationDetails.delegate.birthDate || '',
       sex: registrationDetails.delegate.sex || '',
       passport: registrationDetails.delegate.passport || '',
     },
@@ -155,11 +155,17 @@ function ConventionRegistration({
                       inputFormat="DD/MM/YYYY"
                       value={formik.values.birthDate}
                       onChange={(value) => formik.setFieldValue('birthDate', value, true)}
-                      error={formik.touched.birthDate && Boolean(formik.errors.birthDate)}
-                      helperText={formik.touched.birthDate && formik.errors.birthDate}
                       maxDate={new Date()}
                       // eslint-disable-next-line react/jsx-props-no-spreading
-                      renderInput={(params) => <TextField {...params} required />}
+                      renderInput={(params) => (
+                        <TextField
+                          // eslint-disable-next-line react/jsx-props-no-spreading
+                          {...params}
+                          error={formik.touched.birthDate && Boolean(formik.errors.birthDate)}
+                          helperText={formik.touched.birthDate && formik.errors.birthDate}
+                          required
+                        />
+                      )}
                     />
                   </Box>
                   <Box sx={textFieldContainers}>
