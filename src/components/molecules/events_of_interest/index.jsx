@@ -36,21 +36,22 @@ function EventsOfInterest({ previousStep, registrationDetails }) {
     setChecked(newChecked);
   };
 
-  const handleSubmit = async (delegateDetails) => {
+  const handleSubmit = async (registrationDetails) => {
     const API_URL_FOR_REGISTRATIONS = 'https://aac-test-api.herokuapp.com/delegate/registrations';
     setIsLoading(true);
     try {
       await axios
         .post(API_URL_FOR_REGISTRATIONS, {
           registration: {
-            first_name: delegateDetails.firstName,
-            last_name: delegateDetails.lastName,
-            country: delegateDetails.country,
-            phone_number: delegateDetails.phoneNumber,
-            passport_number: delegateDetails.passport,
-            email: delegateDetails.email,
-            sex: delegateDetails.sex,
-            birth_date: delegateDetails.birthDate,
+            first_name: registrationDetails.delegate.firstName,
+            last_name: registrationDetails.delegate.lastName,
+            country: registrationDetails.delegate.country,
+            phone_number: registrationDetails.delegate.phoneNumber,
+            passport_number: registrationDetails.delegate.passport,
+            email: registrationDetails.delegate.email,
+            sex: registrationDetails.delegate.sex,
+            birth_date: registrationDetails.delegate.birthDate,
+            youth_camps: registrationDetails.footballCamps,
           },
         });
       history.push('/registration/success');
@@ -106,7 +107,7 @@ function EventsOfInterest({ previousStep, registrationDetails }) {
           })}
         </List>
       </Box>
-      <MultiStepFormControl previousBtnHandler={previousStep} nextBtnHandler={() => handleSubmit(registrationDetails.delegate)} customNextBtnText="Submit" />
+      <MultiStepFormControl previousBtnHandler={previousStep} nextBtnHandler={() => handleSubmit(registrationDetails)} customNextBtnText="Submit" />
     </>
   );
 }
