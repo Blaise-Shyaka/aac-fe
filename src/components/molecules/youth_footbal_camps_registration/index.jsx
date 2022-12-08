@@ -12,6 +12,7 @@ import {
   ListItemAvatar,
   ListItemText,
   IconButton,
+  MenuItem,
 } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -23,6 +24,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import textFieldContainers from '../convention_registration/styles';
 import { containedBtnStyles } from '../../organisms/multi_step_form/multi_step_form_control/styles';
 import MultiStepFormControl from '../../organisms/multi_step_form/multi_step_form_control';
+import { GENDERS } from '../../../constants';
 
 function YouthFootballCampRegistration(
   {
@@ -32,14 +34,14 @@ function YouthFootballCampRegistration(
     nextStep,
   },
 ) {
-  const [campRegistration, setCampRegistration] = useState({ fullName: '', birthDate: null });
+  const [campRegistration, setCampRegistration] = useState({ full_name: '', birth_date: null, sex: null });
 
   const handleAddingChild = () => {
     setRegistrationDetails({
       ...registrationDetails,
       footballCamps: [...registrationDetails.footballCamps, campRegistration],
     });
-    setCampRegistration({ fullName: '', birthDate: null });
+    setCampRegistration({ full_name: '', birth_date: null, sex: null });
   };
 
   return (
@@ -63,11 +65,11 @@ function YouthFootballCampRegistration(
               required
               id="outlined-required"
               label="Full Name"
-              value={campRegistration.fullName}
+              value={campRegistration.full_name}
               onChange={(event) => setCampRegistration(
                 {
                   ...campRegistration,
-                  fullName: event.target.value,
+                  full_name: event.target.value,
                 },
               )}
               error={false}
@@ -76,15 +78,35 @@ function YouthFootballCampRegistration(
             <DesktopDatePicker
               label="Date of Birth"
               inputFormat="DD/MM/YYYY"
-              value={campRegistration.birthDate}
+              value={campRegistration.birth_date}
               onChange={(val) => setCampRegistration({
                 ...campRegistration,
-                birthDate: val,
+                birth_date: val,
               })}
               maxDate={new Date()}
                   // eslint-disable-next-line react/jsx-props-no-spreading
               renderInput={(params) => <TextField {...params} required />}
             />
+          </Box>
+          <Box sx={textFieldContainers}>
+            <TextField
+              required
+              select
+              id="sex"
+              name="sex"
+              label="Sex"
+              value={campRegistration.sex}
+              onChange={(event) => setCampRegistration({
+                ...campRegistration,
+                sex: event.target.value,
+              })}
+            >
+              {GENDERS.map((option) => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+            </TextField>
             <Button variant="contained" size="large" sx={containedBtnStyles} onClick={handleAddingChild}>ADD</Button>
           </Box>
         </Box>
@@ -103,7 +125,7 @@ function YouthFootballCampRegistration(
                   {
                 registrationDetails.footballCamps.map((registration) => (
                   <ListItem
-                    key={registration.fullName}
+                    key={registration.full_name}
                     secondaryAction={(
                       <IconButton edge="end" aria-label="delete">
                         <DeleteIcon />
@@ -116,7 +138,7 @@ function YouthFootballCampRegistration(
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText
-                      primary={registration.fullName}
+                      primary={registration.full_name}
                       // secondary={`${registration.birthDate}`}
                     />
                   </ListItem>
