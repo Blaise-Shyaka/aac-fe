@@ -2,7 +2,7 @@ export const partnersStyles = {
   padding: '3rem',
   display: 'flex',
   flexWrap: 'wrap',
-  justifyContent: 'space-between',
+  justifyContent: 'space-evenly',
   '@media (min-width: 744px)': {
     height: '1291px',
   },

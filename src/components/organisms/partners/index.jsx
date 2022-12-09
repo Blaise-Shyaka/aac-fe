@@ -5,11 +5,8 @@ import visitRwandaLogo from '../../../assets/visit-rwanda-logo.avif';
 import bkArenaLogo from '../../../assets/bk-arena-logo.avif';
 import kccLogo from '../../../assets/kcc-logo.avif';
 import fuseLogo from '../../../assets/fuse-logo.avif';
-import microsoftLogo from '../../../assets/microsoft-logo.avif';
 import rwandairLogo from '../../../assets/rwandair-logo.avif';
 import pixellotLogo from '../../../assets/pixellot-logo.avif';
-import skolLogo from '../../../assets/skol-logo.avif';
-import airtelLogo from '../../../assets/airtel-logo.avif';
 import moveLogo from '../../../assets/move-logo.avif';
 import PartnerLogoCard from '../../molecules/partner_logo_card';
 
@@ -31,24 +28,12 @@ const partners = [
     altText: 'Fuse Logo',
   },
   {
-    logo: microsoftLogo,
-    altText: 'Microsoft Logo',
-  },
-  {
     logo: rwandairLogo,
     altText: 'Rwandair Logo',
   },
   {
     logo: pixellotLogo,
     altText: 'Pixellot Logo',
-  },
-  {
-    logo: skolLogo,
-    altText: 'SKOL Logo',
-  },
-  {
-    logo: airtelLogo,
-    altText: 'Airtel Logo',
   },
   {
     logo: moveLogo,
